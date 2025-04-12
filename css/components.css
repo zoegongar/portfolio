@@ -1,0 +1,36 @@
+@media (max-width: 480px) {
+    .cards-container {
+        width: 100%;        
+        display: flex;
+        justify-content: space-between;
+    }
+    .bottom-card{
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem; /* Ajusta según el espacio disponible */
+        margin-top: 2rem;
+      }
+    .playingCard {
+      background-image: url("/assets/images/aboutMe.jpg");
+      background-size: contain;
+      background-repeat: no-repeat;  
+      width: 25vw; /* Cada carta ocupa aprox. 1/4 del ancho */
+      height: auto;
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .textPlayingCards{
+        font-size: 5vw; /* El tamaño de la fuente será proporcional al 5% del ancho de la ventana */
+  max-width: 100%; /* Evita que el texto se desborde fuera del contenedor */
+  white-space: normal; /* Permite que el texto se ajuste a varias líneas si es necesario */
+  overflow: hidden; /* Evita que el texto se desborde */
+  text-overflow: ellipsis; /* Muestra '...' si el texto es demasiado largo */
+    }
+  }
+  
