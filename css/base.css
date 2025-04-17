@@ -19,22 +19,25 @@ html, body {
   
   /* Header ocupará el 20% de la altura */
   header {
-    flex: 0 0 10%;
+    
     /* Opcionalmente, puedes añadir estilos adicionales */
     background-color: #f0f0f0;
   }
   
   /* Main (body de la página) ocupará el 70% */
   main {
-    flex: 0 85%;
+    flex: 0 95%;
     align-items: center;
 
   }
   
-  /* Footer ocupará el 10% */
+  /* Footer ocupará el 5% */
   footer {
-    flex: 0 0 5%;
-    /* Estilos opcionales */
-
+    font-family: 'Roboto', sans-serif;
+    color: #a480d6;
+    text-align: right;
+    margin: 0;
+    
   }
+  
 /*}*/
