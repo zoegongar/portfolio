@@ -1,55 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portfolio</title>
-    <link rel="stylesheet" href="./css/base.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Card Switch</title>
+   <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/content-card.css">
 </head>
 <body>
-
-    <!-- Header -->
-    <header>
-        <nav>
-           
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main>
-        <div class="upper-cards">
-            <div class="playing-card interactive-card" id="aboutMe">
-                <h2 class="text-playing-cards">About<br/> Me</h2>
-            </div>
-
-            <div class="playing-card interactive-card" id="tutorials">
-                <h2 class="text-playing-cards">Tutorials</h2>
-            </div>
-
-            <div class="playing-card interactive-card" id="projects">
-                <h2 class="text-playing-cards">Projects</h2>
-            </div>
-        </div>
-        <div class="middle-cards">
-            <div class="playing-card naipe-card" id="playing-card-back">
-                <h2  class="text-playing-cards">Main</h2>
-            </div>
-            <div class="playing-card location-indicator">
-                <h2 class="text-playing-cards">as Hearts</h2>
-            </div>
-        </div>
-        <div class="bottom-cards">
-            <div class="playing-card naipe-card">patata</div>
-            <div class="playing-card location-indicator">zanahoria</div>
+  <div class="card background"alt="Card background" >
+   
+    <div id="content">
+        <p id="name">Zoe González García </p>
+        <p>Web Designer</p>
     </div>
-    </main>
+    <div class="language-selector">
+      <img src="./assets/images/spanish-languages.png" alt="Spanish" onclick="changeLanguage('es')">
+      <img src="./assets/images/english-languages.png" alt="English" onclick="changeLanguage('en')">
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        Designed & developed by ZoeGonGar
-    </footer>
+    
+    <div>
+      <button id="btn1">How it works</button>
+      <button id="btn2">Start</button>
+    </div>
+  </div>
 
-
+  <script>
+    function changeLanguage(lang) {
+      if (lang === 'es') {
+        document.getElementById('title').textContent = 'Diseñadora Web';
+        document.getElementById('btn1').textContent = 'Cómo funciona';
+        document.getElementById('btn2').textContent = 'Empezar';
+      } else {
+        document.getElementById('title').textContent = 'Web Designer';
+        document.getElementById('btn1').textContent = 'How it works';
+        document.getElementById('btn2').textContent = 'Start';
+      }
+    }
+  </script>
 </body>
 </html>
