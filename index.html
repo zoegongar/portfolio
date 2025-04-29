@@ -4,31 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Language Card Switch</title>
-   <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/components.css">
   <link rel="stylesheet" href="./css/content-card.css">
 </head>
 <body>
-  <div class="card background"alt="Card background" >
-   
-    <div id="content">
-        <p id="name">Zoe González García </p>
-        <p>Web Designer</p>
-    </div>
-    <div class="language-selector">
-      <img src="./assets/images/spanish-languages.png" alt="Spanish" onclick="changeLanguage('es')">
-      <img src="./assets/images/english-languages.png" alt="English" onclick="changeLanguage('en')">
+  <div class="card background" alt="Card background">                                                  
+    
+    <div id="logo-dark"></div>
+
+    <!-- Nuevo contenedor general -->
+    <div id="home-container">
+      <div id="content">
+        <p id="name">Zoe González García</p>
+        <p id="title">Web Designer</p>
+      </div>
+
+      <div class="language-section">
+        <div class="language-text">
+          <p>Elige tu idioma.</p>
+          <p>Choose your language.</p>
+        </div>
+        <div class="language-selector">
+          <img src="./assets/images/spanish-languages.png" alt="Spanish" onclick="changeLanguage('es')">
+          <img src="./assets/images/english-languages.png" alt="English" onclick="changeLanguage('en')">
+        </div>
+      </div>
+
+      <div id="btn-container">
+        <button class="button" id="btn1">How it works</button>
+        <button class="button" id="btn2">Start</button>
+      </div>
     </div>
 
-    
-    <div>
-      <button id="btn1">How it works</button>
-      <button id="btn2">Start</button>
-    </div>
+    <!-- Bloque que aparecerá al pulsar "How it works" -->
+    <div id="how-it-works" style="display: none;"></div>
   </div>
 
   <script>
     function changeLanguage(lang) {
+      localStorage.setItem('idiomaSeleccionado', lang);
+      console.log("Idioma guardado:", lang);
+  
       if (lang === 'es') {
         document.getElementById('title').textContent = 'Diseñadora Web';
         document.getElementById('btn1').textContent = 'Cómo funciona';
@@ -39,6 +56,52 @@
         document.getElementById('btn2').textContent = 'Start';
       }
     }
+  
+    document.addEventListener("DOMContentLoaded", () => {
+      const lang = localStorage.getItem('idiomaSeleccionado') || 'en';
+      changeLanguage(lang);
+    });
+  
+    // Botón para ir al main
+    document.getElementById('btn2').addEventListener('click', () => {
+      window.location.href = 'main.html';
+    });
+  
+    // Botón para mostrar el how-it-works
+    document.getElementById('btn1').addEventListener('click', () => {
+      const homeContainer = document.getElementById('home-container');
+      const logoDark = document.getElementById('logo-dark');
+      const howItWorks = document.getElementById('how-it-works');
+  
+      // Ocultar home usando clases
+      homeContainer.classList.add('hidden');
+      logoDark.classList.add('hidden');
+  
+      // Crear contenido de how-it-works
+      howItWorks.innerHTML = `
+        <h2>How it works</h2>
+        <p>Aquí iría tu explicación...</p>
+        <button id="back-button" class="button">← Back</button>
+      `;
+      howItWorks.classList.remove('hidden');
+      howItWorks.style.display = 'flex';
+      howItWorks.style.flexDirection = 'column';
+      howItWorks.style.alignItems = 'center';
+      howItWorks.style.justifyContent = 'center';
+      howItWorks.style.padding = '2rem';
+  
+      // Botón de volver
+      document.getElementById('back-button').addEventListener('click', () => {
+        // Ocultar how-it-works
+        howItWorks.classList.add('hidden');
+        howItWorks.innerHTML = '';
+  
+        // Mostrar home de nuevo
+        homeContainer.classList.remove('hidden');
+        logoDark.classList.remove('hidden');
+      });
+    });
   </script>
+  
 </body>
 </html>
