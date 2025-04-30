@@ -31,7 +31,7 @@
     position: relative;
     width: 100%;
     text-align: center;
-    margin-top: 10rem;
+    margin-top: 3.5rem;
 }
 
 .language-text p {
@@ -48,11 +48,10 @@
   
   #content {
     position: relative;
-    top: 11rem;
+    top: 4rem;
     left: 2rem;
     width: 18rem;
     height: 5rem;
-    
     background-image: url("./../assets/images/content-name.png");
     background-size: contain;
     background-repeat: no-repeat; 
@@ -115,7 +114,7 @@
     background-repeat: no-repeat;
     width: 7rem;
     height: 7rem;
-    position: absolute;
+    position: relative;
     top: 3rem;
     left: 8.5rem;
     z-index: 10;
@@ -135,11 +134,30 @@
   .hidden {
     display: none !important;
   }
-  @media (min-width: 768px) {
 
-        #home-container {
-          margin-top: 5vh; /* Puedes ajustar a 8vh, 10vh, etc. */
-        }  
+  #orientation-warning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f2e3d5;
+    color: #3d0066;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  @media (min-width: 768px) { 
 
     .card.background {
       max-width: 450px;
