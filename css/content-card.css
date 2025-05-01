@@ -157,21 +157,19 @@ body {
 
   #orientation-warning {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
     background-color: #f2e3d5;
     color: #3d0066;
-    z-index: 9999;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around; /* esto separa arriba y abajo */
     align-items: center;
     padding: 2rem;
     text-align: center;
     font-size: 1.5rem;
-    font-weight: bold;
+    z-index: 1000;
   }
+  
   
   .hidden {
     display: none !important;
@@ -225,6 +223,10 @@ body {
         align-items: center;
         z-index: 10;
       }
+
+      #orientation-warning{
+        display: none;
+      }    
       
   }
     
