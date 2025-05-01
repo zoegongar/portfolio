@@ -114,9 +114,10 @@
    
   }
 
-  if (window.location.pathname !== './index.html') {
-      window.location.href = './index.html';
-    }
+  if (!window.location.pathname.endsWith('index.html')) {
+  window.location.href = './index.html';
+}
+
 }
 
 // Ejecuta al cargar y al cambiar orientación/tamaño
