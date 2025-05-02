@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./css/base.css" />
   <link rel="stylesheet" href="./css/components.css" />
   <link rel="stylesheet" href="./css/content-card.css" />
+  <link rel="stylesheet" href="./css/how-it-works.css" />
 </head>
 <body>
   <div class="card background" alt="Card background">
@@ -75,11 +76,9 @@
         ${section.paragraphs.map(p => `<p>${p}</p>`).join('')}
         <button id="back-button" class="button">← Back</button>
       `;
-      howItWorks.style.display = 'flex';
-      howItWorks.style.flexDirection = 'column';
-      howItWorks.style.alignItems = 'center';
-      howItWorks.style.justifyContent = 'center';
-      howItWorks.style.padding = '2rem';
+      howItWorks.classList.add('visible-section');
+      howItWorks.style.display = '';
+
   
       document.getElementById('back-button').addEventListener('click', () => {
         howItWorks.style.display = 'none';
