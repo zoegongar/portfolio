@@ -1,12 +1,12 @@
 /* Asegurarse de que html y body ocupen el 100% de la altura */
-/*@media (max-width: 480px) {*/
+
 html, body {
     height: 100%;
     width: auto;
     margin: 0;
     padding: 0;
     background-image: url("./../assets/images/backgroung.png");
-    background-size: cover; /* o 'contain', según prefieras */
+    background-size: cover; 
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -17,21 +17,17 @@ html, body {
     flex-direction: column;
   }
   
-  /* Header ocupará el 20% de la altura */
+
   header {
-    
-    /* Opcionalmente, puedes añadir estilos adicionales */
     background-color: #f0f0f0;
   }
-  
-  /* Main (body de la página) ocupará el 70% */
+
   main {
     flex: 0 95%;
     align-items: center;
 
   }
-  
-  /* Footer ocupará el 5% */
+ 
   footer {
     font-family: 'Roboto', sans-serif;
     color: #a480d6;

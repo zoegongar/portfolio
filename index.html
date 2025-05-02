@@ -12,7 +12,8 @@
 <body>
   <div class="card background" alt="Card background">
     
-    <!-- TODO dentro de home-container -->
+    <!-- NOTE: Se ha creado un contenedor que contiene todo, 
+     para que sea más facil manejar tamaños y posiciones  -->
     <div id="home-container">
       <div id="logo-dark"></div>
 
@@ -98,27 +99,26 @@
     });
 
     function checkOrientation() {
+  const isSmallScreen = window.innerWidth < 768 || window.innerHeight < 768;
+  if (!isSmallScreen) return; // Si no es pantalla pequeña, no hacemos nada
+
   const warning = document.getElementById('orientation-warning');
   const mainContent = document.querySelector('.card.background');
 
   if (window.innerWidth > window.innerHeight) {
-    // Horizontal
     warning.classList.remove('hidden');
     mainContent.style.display = 'none';
   } else {
-    // Vertical
     warning.classList.add('hidden');
     mainContent.style.display = '';
-
-   
-   
   }
-/*Si la pantalla está girada lanza el mensaje*/
+
   if (!window.location.pathname.endsWith('index.html')) {
-  window.location.href = './index.html';
+    window.location.href = './index.html';
+  }
 }
 
-}
+
 
 // Ejecuta al cargar y al cambiar orientación/tamaño
 window.addEventListener('load', checkOrientation);
