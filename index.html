@@ -8,12 +8,11 @@
   <link rel="stylesheet" href="./css/base.css" />
   <link rel="stylesheet" href="./css/components.css" />
   <link rel="stylesheet" href="./css/content-card.css" />
+  <link rel="stylesheet" href="./css/how-it-works.css" />
 </head>
 <body>
   <div class="card background" alt="Card background">
     
-    <!-- NOTE: Se ha creado un contenedor que contiene todo, 
-     para que sea más facil manejar tamaños y posiciones  -->
     <div id="home-container">
       <div id="logo-dark"></div>
 
@@ -50,7 +49,9 @@
   
   <script>
     function changeLanguage(lang) {
+      console.log('change lang, begin', lang);
       localStorage.setItem('idiomaSeleccionado', lang);
+  
       if (lang === 'es') {
         document.getElementById('title').textContent = 'Diseñadora Web';
         document.getElementById('btn1').textContent = 'Cómo funciona';
@@ -61,70 +62,70 @@
         document.getElementById('btn2').textContent = 'Start';
       }
     }
+  
+    async function loadHowItWorksContent(lang) {
+      console.log('loadHowItWorksContent', lang);
+  
+      const response = await fetch(`./languages/${lang}/how-it-works.json`);
+      const data = await response.json();
+      const section = data.how_it_works;
+  
+      const howItWorks = document.getElementById('how-it-works');
+      howItWorks.innerHTML = `
+        <h2>${section.title}</h2>
+        ${section.paragraphs.map(p => `<p>${p}</p>`).join('')}
+        <button id="back-button" class="button">← Back</button>
+      `;
+      howItWorks.classList.add('visible-section');
+      howItWorks.style.display = '';
 
+  
+      document.getElementById('back-button').addEventListener('click', () => {
+        howItWorks.style.display = 'none';
+        howItWorks.innerHTML = '';
+        document.getElementById('home-container').classList.remove('hidden');
+      });
+    }
+  
     document.addEventListener('DOMContentLoaded', () => {
       const lang = localStorage.getItem('idiomaSeleccionado') || 'en';
       changeLanguage(lang);
-
+  
       document.getElementById('btn2').addEventListener('click', () => {
         window.location.href = 'main.html';
       });
-
+  
       document.getElementById('btn1').addEventListener('click', () => {
-        const homeContainer = document.getElementById('home-container');
-        const howItWorks = document.getElementById('how-it-works');
-
-        // Ocultar home
-        homeContainer.classList.add('hidden');
-
-        // Crea contenido How it works
-        howItWorks.innerHTML = `
-          <h2>How it works</h2>
-          <p>Aquí iría tu explicación...</p>
-          <button id="back-button" class="button">← Back</button>
-        `;
-        howItWorks.style.display = 'flex';
-        howItWorks.style.flexDirection = 'column';
-        howItWorks.style.alignItems = 'center';
-        howItWorks.style.justifyContent = 'center';
-        howItWorks.style.padding = '2rem';
-
-        // Volver atrás
-        document.getElementById('back-button').addEventListener('click', () => {
-          howItWorks.style.display = 'none';
-          howItWorks.innerHTML = '';
-          homeContainer.classList.remove('hidden');
-        });
+        document.getElementById('home-container').classList.add('hidden');
+        const currentLang = localStorage.getItem('idiomaSeleccionado') || 'en';
+        loadHowItWorksContent(currentLang);
       });
     });
-
+  
     function checkOrientation() {
-  const isSmallScreen = window.innerWidth < 768 || window.innerHeight < 768;
-  if (!isSmallScreen) return; // Si no es pantalla pequeña, no hacemos nada
-
-  const warning = document.getElementById('orientation-warning');
-  const mainContent = document.querySelector('.card.background');
-
-  if (window.innerWidth > window.innerHeight) {
-    warning.classList.remove('hidden');
-    mainContent.style.display = 'none';
-  } else {
-    warning.classList.add('hidden');
-    mainContent.style.display = '';
-  }
-
-  if (!window.location.pathname.endsWith('index.html')) {
-    window.location.href = './index.html';
-  }
-}
-
-
-
-// Ejecuta al cargar y al cambiar orientación/tamaño
-window.addEventListener('load', checkOrientation);
-window.addEventListener('resize', checkOrientation);
-window.addEventListener('orientationchange', checkOrientation);
-
+      const isSmallScreen = window.innerWidth < 768 || window.innerHeight < 768;
+      if (!isSmallScreen) return;
+  
+      const warning = document.getElementById('orientation-warning');
+      const mainContent = document.querySelector('.card.background');
+  
+      if (window.innerWidth > window.innerHeight) {
+        warning.classList.remove('hidden');
+        mainContent.style.display = 'none';
+      } else {
+        warning.classList.add('hidden');
+        mainContent.style.display = '';
+      }
+  
+      if (!window.location.pathname.endsWith('index.html')) {
+        window.location.href = './index.html';
+      }
+    }
+  
+    window.addEventListener('load', checkOrientation);
+    window.addEventListener('resize', checkOrientation);
+    window.addEventListener('orientationchange', checkOrientation);
   </script>
+  
 </body>
 </html>
