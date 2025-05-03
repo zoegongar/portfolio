@@ -1,35 +1,33 @@
-/* how-it-works.css */
+/* content-section.css */
 
-/* Contenedor principal de la sección */
-#how-it-works {
-    padding: 2rem 4rem;
-    color: #2a2a2a;
-    text-indent: 0.5rem;
-  }
+/* Estilo general para secciones de contenido como How It Works, About Me, etc. */
+.content-section {
+  padding: 2rem 4rem;
+  color: #2a2a2a;
+  text-indent: 0.5rem;
+}
 
-p + p {
-    margin-top: 0.75rem;
+/* Títulos */
+.content-section h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  color: #3d0066;
 }
-  
-  
-#how-it-works h2 {
-    font-size: 2rem;
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2.5rem;
-    color: #3d0066;
+
+/* Espaciado entre párrafos */
+.content-section p + p {
+  margin-top: 0.75rem;
 }
-  
-#back-button {
-    margin-top: 2rem;
-    margin-left: 2rem;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    
-    
-  
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+
+/* Botón común para regresar o acciones */
+.content-section .button {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-  

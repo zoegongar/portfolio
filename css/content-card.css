@@ -144,9 +144,9 @@
     opacity: 1;
   }
   
-  .hidden {
+ /*  .hidden {
     display: none !important;
-  }
+  } */
   
   #orientation-warning {
     position: fixed;
@@ -163,9 +163,7 @@
     z-index: 1000;
   }
   
-  .hidden {
-    display: none !important;
-  }
+
   
   #home-container {
     flex-direction: column;
