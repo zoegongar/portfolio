@@ -1,12 +1,11 @@
 {
-    "about_me": {
-      "title": "Sobre mí",
-      "back": "← Volver",
-      "paragraphs": [
-        "Diseñadora web y desarrolladora front-end con formación en humanidades.",
-        "Combino creatividad y estructura para diseñar sitios intuitivos.",
-        "Apasionada por la accesibilidad, los sistemas de diseño y el aprendizaje continuo."
-      ]
-    }
+  "about_me": {
+    "title": "Sobre mí",
+    "back": "← Volver",
+    "paragraphs": [
+      "Diseñadora web y desarrolladora front-end con formación en humanidades.",
+      "Combino creatividad y estructura para diseñar sitios intuitivos.",
+      "Apasionada por la accesibilidad, los sistemas de diseño y el aprendizaje continuo."
+    ]
   }
-  
+}
