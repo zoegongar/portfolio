@@ -79,6 +79,15 @@
         6px 6px 0 #bbb,
         9px 9px 0 #aaa;
       }
-   
-  
-  
+
+      .hidden {
+        display: none !important;
+      }
+
+      /* === Work in Progress Icon === */
+      .work-in-progress-icon {
+        width: 9rem;
+        height: auto;
+        display: block;
+        margin: 1rem auto;
+      }

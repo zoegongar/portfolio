@@ -39,7 +39,7 @@
     </div>
 
     <!-- Sección que se muestra al pulsar 'How it works' -->
-    <div id="how-it-works" style="display: none;"></div>
+    <div id="how-it-works" class="content-section" style="display: none;"></div>
 
   </div>
   <div id="orientation-warning" class="hidden">
@@ -64,35 +64,36 @@
     }
   
     async function loadHowItWorksContent(lang) {
-      console.log('loadHowItWorksContent', lang);
-  
-      const response = await fetch(`./languages/${lang}/how-it-works.json`);
-      const data = await response.json();
-      const section = data.how_it_works;
-  
-      const howItWorks = document.getElementById('how-it-works');
-      howItWorks.innerHTML = `
-        <h2>${section.title}</h2>
-        ${section.paragraphs.map(p => `<p>${p}</p>`).join('')}
-        <button id="back-button" class="button">← Back</button>
-      `;
-      howItWorks.classList.add('visible-section');
-      howItWorks.style.display = '';
+  console.log('loadHowItWorksContent', lang);
 
-  
-      document.getElementById('back-button').addEventListener('click', () => {
-        howItWorks.style.display = 'none';
-        howItWorks.innerHTML = '';
-        document.getElementById('home-container').classList.remove('hidden');
-      });
-    }
+  const response = await fetch(`./languages/${lang}/how-it-works.json`);
+  const data = await response.json();
+  const section = data.how_it_works;
+
+  const howItWorks = document.getElementById('how-it-works');
+  howItWorks.innerHTML = `
+    <h2>${section.title}</h2>
+    ${section.paragraphs.map(p => `<p>${p}</p>`).join('')}
+    <button id="back-button" class="button">${section.back}</button>
+  `;
+
+  howItWorks.classList.add('visible-section');
+  howItWorks.style.display = '';
+
+  document.getElementById('back-button').addEventListener('click', () => {
+    howItWorks.style.display = 'none';
+    howItWorks.innerHTML = '';
+    document.getElementById('home-container').classList.remove('hidden');
+  });
+}
+
   
     document.addEventListener('DOMContentLoaded', () => {
       const lang = localStorage.getItem('idiomaSeleccionado') || 'en';
       changeLanguage(lang);
   
       document.getElementById('btn2').addEventListener('click', () => {
-        window.location.href = 'main.html';
+        window.location.href = './main/index.html';
       });
   
       document.getElementById('btn1').addEventListener('click', () => {
