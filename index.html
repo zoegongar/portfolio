@@ -17,13 +17,13 @@
 
         <div id="content">
           <p id="name">Zoe González García</p>
-          <p id="title">Web Designer</p>
+          <p id="title"></p>
         </div>
 
         <div class="language-section">
           <div class="language-text">
-            <p>Elige tu idioma.</p>
-            <p>Choose your language.</p>
+            <p>Elige tu idioma</p>
+            <p>Choose your language</p>
           </div>
           <div class="language-selector">
             <img
@@ -40,8 +40,8 @@
         </div>
 
         <div id="btn-container">
-          <button class="button" id="btn1">How it works</button>
-          <button class="button" id="btn2">Start</button>
+          <button class="button" id="btn-how-it-works">How it works</button>
+          <button class="button" id="btn-start">Start</button>
         </div>
       </div>
 
@@ -66,17 +66,17 @@
 
         if (lang === "es") {
           document.getElementById("title").textContent = "Diseñadora Web";
-          document.getElementById("btn1").textContent = "Cómo funciona";
-          document.getElementById("btn2").textContent = "Empezar";
+          document.getElementById("btn-how-it-works").textContent = "Cómo funciona";
+          document.getElementById("btn-start").textContent = "Empezar";
         } else {
           document.getElementById("title").textContent = "Web Designer";
-          document.getElementById("btn1").textContent = "How it works";
-          document.getElementById("btn2").textContent = "Start";
+          document.getElementById("btn-how-it-works").textContent = "How it works";
+          document.getElementById("btn-start").textContent = "Start";
         }
       }
 
       async function loadHowItWorksContent(lang) {
-        console.log("loadHowItWorksContent", lang);
+
 
         const response = await fetch(`./languages/${lang}/how-it-works.json`);
         const data = await response.json();
@@ -103,11 +103,11 @@
         const lang = localStorage.getItem("idiomaSeleccionado") || "en";
         changeLanguage(lang);
 
-        document.getElementById("btn2").addEventListener("click", () => {
+        document.getElementById("btn-start").addEventListener("click", () => {
           window.location.href = "./main/index.html";
         });
 
-        document.getElementById("btn1").addEventListener("click", () => {
+        document.getElementById("btn-how-it-works").addEventListener("click", () => {
           document.getElementById("home-container").classList.add("hidden");
           const currentLang =
             localStorage.getItem("idiomaSeleccionado") || "en";
