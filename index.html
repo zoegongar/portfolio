@@ -1,132 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
-  <title>Portfolio Zoe González García</title>
-  <link rel="stylesheet" href="./css/base.css" />
-  <link rel="stylesheet" href="./css/components.css" />
-  <link rel="stylesheet" href="./css/content-card.css" />
-  <link rel="stylesheet" href="./css/how-it-works.css" />
-</head>
-<body>
-  <div class="card background" alt="Card background">
-    
-    <div id="home-container">
-      <div id="logo-dark"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <div id="content">
-        <p id="name">Zoe González García</p>
-        <p id="title">Web Designer</p>
-      </div>
+    <title>Portfolio Zoe González García</title>
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/content-card.css" />
+    <link rel="stylesheet" href="./css/how-it-works.css" />
+  </head>
+  <body>
+    <div class="card background" alt="Card background">
+      <div id="home-container">
+        <div id="logo-dark"></div>
 
-      <div class="language-section">
-        <div class="language-text">
-          <p>Elige tu idioma.</p>
-          <p>Choose your language.</p>
+        <div id="content">
+          <p id="name">Zoe González García</p>
+          <p id="title"></p>
         </div>
-        <div class="language-selector">
-          <img src="./assets/images/spanish-languages.png" alt="Spanish" onclick="changeLanguage('es')" />
-          <img src="./assets/images/english-languages.png" alt="English" onclick="changeLanguage('en')" />
+
+        <div class="language-section">
+          <div class="language-text">
+            <p>Elige tu idioma</p>
+            <p>Choose your language</p>
+          </div>
+          <div class="language-selector">
+            <img
+              src="./assets/images/spanish-languages.png"
+              alt="Spanish"
+              onclick="changeLanguage('es')"
+            />
+            <img
+              src="./assets/images/english-languages.png"
+              alt="English"
+              onclick="changeLanguage('en')"
+            />
+          </div>
+        </div>
+
+        <div id="btn-container">
+          <button class="button" id="btn-how-it-works">How it works</button>
+          <button class="button" id="btn-start">Start</button>
         </div>
       </div>
 
-      <div id="btn-container">
-        <button class="button" id="btn1">How it works</button>
-        <button class="button" id="btn2">Start</button>
-      </div>
+      <div
+        id="how-it-works"
+        class="content-section"
+        style="display: none"
+      ></div>
+    </div>
+    <div id="orientation-warning" class="hidden">
+      <p>
+        Por favor, gira tu dispositivo a modo vertical para una mejor
+        experiencia.
+      </p>
+      <p>Please rotate your device to portrait mode for a better experience.</p>
     </div>
 
-    <!-- Sección que se muestra al pulsar 'How it works' -->
-    <div id="how-it-works" class="content-section" style="display: none;"></div>
+    <script>
+      function changeLanguage(lang) {
+        console.log("change lang, begin", lang);
+        localStorage.setItem("idiomaSeleccionado", lang);
 
-  </div>
-  <div id="orientation-warning" class="hidden">
-    <p>Por favor, gira tu dispositivo a modo vertical para una mejor experiencia.</p>
-    <p>Please rotate your device to portrait mode for a better experience.</p>
-  </div>
-  
-  <script>
-    function changeLanguage(lang) {
-      console.log('change lang, begin', lang);
-      localStorage.setItem('idiomaSeleccionado', lang);
-  
-      if (lang === 'es') {
-        document.getElementById('title').textContent = 'Diseñadora Web';
-        document.getElementById('btn1').textContent = 'Cómo funciona';
-        document.getElementById('btn2').textContent = 'Empezar';
-      } else {
-        document.getElementById('title').textContent = 'Web Designer';
-        document.getElementById('btn1').textContent = 'How it works';
-        document.getElementById('btn2').textContent = 'Start';
+        if (lang === "es") {
+          document.getElementById("title").textContent = "Diseñadora Web";
+          document.getElementById("btn-how-it-works").textContent = "Cómo funciona";
+          document.getElementById("btn-start").textContent = "Empezar";
+        } else {
+          document.getElementById("title").textContent = "Web Designer";
+          document.getElementById("btn-how-it-works").textContent = "How it works";
+          document.getElementById("btn-start").textContent = "Start";
+        }
       }
-    }
-  
-    async function loadHowItWorksContent(lang) {
-  console.log('loadHowItWorksContent', lang);
 
-  const response = await fetch(`./languages/${lang}/how-it-works.json`);
-  const data = await response.json();
-  const section = data.how_it_works;
+      async function loadHowItWorksContent(lang) {
 
-  const howItWorks = document.getElementById('how-it-works');
-  howItWorks.innerHTML = `
+
+        const response = await fetch(`./languages/${lang}/how-it-works.json`);
+        const data = await response.json();
+        const section = data.how_it_works;
+
+        const howItWorks = document.getElementById("how-it-works");
+        howItWorks.innerHTML = `
     <h2>${section.title}</h2>
-    ${section.paragraphs.map(p => `<p>${p}</p>`).join('')}
+    ${section.paragraphs.map((p) => `<p>${p}</p>`).join("")}
     <button id="back-button" class="button">${section.back}</button>
   `;
 
-  howItWorks.classList.add('visible-section');
-  howItWorks.style.display = '';
+        howItWorks.classList.add("visible-section");
+        howItWorks.style.display = "";
 
-  document.getElementById('back-button').addEventListener('click', () => {
-    howItWorks.style.display = 'none';
-    howItWorks.innerHTML = '';
-    document.getElementById('home-container').classList.remove('hidden');
-  });
-}
+        document.getElementById("back-button").addEventListener("click", () => {
+          howItWorks.style.display = "none";
+          howItWorks.innerHTML = "";
+          document.getElementById("home-container").classList.remove("hidden");
+        });
+      }
 
-  
-    document.addEventListener('DOMContentLoaded', () => {
-      const lang = localStorage.getItem('idiomaSeleccionado') || 'en';
-      changeLanguage(lang);
-  
-      document.getElementById('btn2').addEventListener('click', () => {
-        window.location.href = './main/index.html';
+      document.addEventListener("DOMContentLoaded", () => {
+        const lang = localStorage.getItem("idiomaSeleccionado") || "en";
+        changeLanguage(lang);
+
+        document.getElementById("btn-start").addEventListener("click", () => {
+          window.location.href = "./main/index.html";
+        });
+
+        document.getElementById("btn-how-it-works").addEventListener("click", () => {
+          document.getElementById("home-container").classList.add("hidden");
+          const currentLang =
+            localStorage.getItem("idiomaSeleccionado") || "en";
+          loadHowItWorksContent(currentLang);
+        });
       });
-  
-      document.getElementById('btn1').addEventListener('click', () => {
-        document.getElementById('home-container').classList.add('hidden');
-        const currentLang = localStorage.getItem('idiomaSeleccionado') || 'en';
-        loadHowItWorksContent(currentLang);
-      });
-    });
-  
-    function checkOrientation() {
-      const isSmallScreen = window.innerWidth < 768 || window.innerHeight < 768;
-      if (!isSmallScreen) return;
-  
-      const warning = document.getElementById('orientation-warning');
-      const mainContent = document.querySelector('.card.background');
-  
-      if (window.innerWidth > window.innerHeight) {
-        warning.classList.remove('hidden');
-        mainContent.style.display = 'none';
-      } else {
-        warning.classList.add('hidden');
-        mainContent.style.display = '';
+
+      function checkOrientation() {
+        const isSmallScreen =
+          window.innerWidth < 768 || window.innerHeight < 768;
+        if (!isSmallScreen) return;
+
+        const warning = document.getElementById("orientation-warning");
+        const mainContent = document.querySelector(".card.background");
+
+        if (window.innerWidth > window.innerHeight) {
+          warning.classList.remove("hidden");
+          mainContent.style.display = "none";
+        } else {
+          warning.classList.add("hidden");
+          mainContent.style.display = "";
+        }
+
+        if (!window.location.pathname.endsWith("index.html")) {
+          window.location.href = "./index.html";
+        }
       }
-  
-      if (!window.location.pathname.endsWith('index.html')) {
-        window.location.href = './index.html';
-      }
-    }
-  
-    window.addEventListener('load', checkOrientation);
-    window.addEventListener('resize', checkOrientation);
-    window.addEventListener('orientationchange', checkOrientation);
-  </script>
-  
-</body>
+
+      window.addEventListener("load", checkOrientation);
+      window.addEventListener("resize", checkOrientation);
+      window.addEventListener("orientationchange", checkOrientation);
+    </script>
+  </body>
 </html>

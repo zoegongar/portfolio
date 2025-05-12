@@ -1,108 +1,193 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-  }  
-  
-  .card {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.card {
+  position: relative;
+  width: 99vw;
+  max-width: 380px;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  background-image: url("./../assets/images/content-card.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: #3d0066;
+}
+
+.background {
+  width: 100%;
+  display: block;
+}
+
+.language-selector {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.language-selector img {
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+}
+
+.language-section {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.language-text p {
+  font-weight: bold;
+  color: #3d0066;
+  margin: 0.5rem 0;
+}
+
+.language-selector img:active {
+  transform: scale(0.95);
+}
+
+#content {
+  position: relative;
+  top: 2rem;
+  left: 3rem;
+  width: 18rem;
+  height: 5rem;
+  background-image: url("./../assets/images/content-name.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+#name {
+  align-items: center;
+}
+
+#content p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+#btn-container {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5%; 
+  z-index: 10;
+}
+
+.button {
+  width: 10rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid #3d0066;
+  background-color: #f2e3d5;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #3d0066;
+  transition: background-color 0.2s;
+  color: #3d0066;
+  font-size: 15px;
+}
+
+#title {
+  font-size: 25px;
+}
+
+.button:active {
+  background-color: #e1d2c4;
+}
+
+#logo-dark {
+  background-image: url("./../assets/images/zoeGonGar-dark-logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 7rem;
+  height: 7rem;
+  position: relative;
+  top: 1.5rem;
+  left: 8.5rem;
+  z-index: 10;
+}
+
+/* Animaciones */
+.fade {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.fade.show {
+  opacity: 1;
+}
+
+/*  .hidden {
+    display: none !important;
+  } */
+
+#orientation-warning {
+  position: fixed;
+  inset: 0;
+  background-color: #f2e3d5;
+  color: #3d0066;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* esto separa arriba y abajo */
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  z-index: 1000;
+}
+
+#home-container {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .card.background {
     position: relative;
-    width: 99vw;
-    max-width: 380px;
-    height: auto;
-    aspect-ratio: 2 / 3; /* mantiene proporción sin height fija */ 
-    background-image: url("./../assets/images/content-card.png");
-    background-size: contain;
-    background-repeat: no-repeat;  
-    color: #3d0066;
+    max-width: 450px;
+    margin: 4rem auto;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
-  
-  .background {
-    width: 100%;
-    display: block;
-  }
-  
-  .language-selector {
-    position: absolute;    
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  
-  .language-selector img {
-    width: 5rem;
-    height: 5rem;
-    cursor: pointer;
-  }
-  
-  .language-section {
-    position: relative;
-    width: 100%;
-    text-align: center;
-    margin-top: 2.5rem;
-  }
-  
+
+  #content p,
   .language-text p {
-    font-weight: bold;
-    color: #3d0066;
-    margin: 0.5rem 0;
+    font-size: 1.5rem;
   }
-  
-  .language-selector img:active {
-    transform: scale(0.95);
-  }
-  
-  #content {
-    position: relative;
-    top: 2rem;
-    left: 3rem;
-    width: 18rem;
-    height: 5rem;
-    background-image: url("./../assets/images/content-name.png");
-    background-size: contain;
-    background-repeat: no-repeat; 
-    display: flex;
-    flex-direction: column;
-    padding-top: 0.5rem;
-    justify-content: flex-start;    
-    text-align: center;
-  }
-  
-  #name {
-    align-items: center;
-  }
-  
-  #content p {
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-  }  
-  
-  #btn-container {
-    position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5%; /* proporcional al tamaño */
-    z-index: 10;
-  }
-  
+
   .button {
     width: 10rem;
     padding: 0.5rem;
-    margin: 0.5rem;
     border-radius: 0.5rem;
     border: 2px solid #3d0066;
     background-color: #f2e3d5;
@@ -111,109 +196,22 @@
     box-shadow: 2px 2px 0 #3d0066;
     transition: background-color 0.2s;
     color: #3d0066;
-    font-size: 15px;
+    font-size: 1.2rem;
   }
-  
-  #title {
-    font-size: 25px;
-  }
-  
-  .button:active {
-    background-color: #e1d2c4;
-  }
-  
-  #logo-dark {
-    background-image: url("./../assets/images/zoeGonGar-dark-logo.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 7rem;
-    height: 7rem;
-    position: relative;
-    top: 1.5rem;
-    left: 8.5rem;
-    z-index: 10;
-  }
-  
-  /* Animaciones */
-  .fade {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-  
-  .fade.show {
-    opacity: 1;
-  }
-  
- /*  .hidden {
-    display: none !important;
-  } */
-  
-  #orientation-warning {
-    position: fixed;
-    inset: 0;
-    background-color: #f2e3d5;
-    color: #3d0066;
+
+  #btn-container {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
-    justify-content: space-around; /* esto separa arriba y abajo */
+    gap: 1rem;
     align-items: center;
-    padding: 2rem;
-    text-align: center;
-    font-size: 1.5rem;
-    z-index: 1000;
+    z-index: 10;
   }
-  
 
-  
-  #home-container {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2rem;
-    height: 100%;
+  #orientation-warning {
+    display: none;
   }
-  
-  @media (min-width: 768px) { 
-    .card.background {
-      position: relative;
-      max-width: 450px;
-      margin: 4rem auto;
-      padding: 2rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-  
-    #content p, .language-text p {
-      font-size: 1.5rem;
-    }
-  
-    .button {
-      width: 10rem;
-      padding: 0.5rem;
-      border-radius: 0.5rem;
-      border: 2px solid #3d0066;
-      background-color: #f2e3d5;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 2px 2px 0 #3d0066;
-      transition: background-color 0.2s;
-      color: #3d0066;
-      font-size: 1.2rem;
-    }
-  
-    #btn-container {
-      position: absolute;
-      bottom: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: center;
-      z-index: 10;
-    }
-  
-    #orientation-warning {
-      display: none;
-    }    
-  }
-  
+}

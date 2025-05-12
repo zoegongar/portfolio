@@ -1,15 +1,14 @@
 {
-    "how_it_works": {
-      "title": "Cómo funciona",
-      "paragraphs": [
-        "Soy Zoe, ¡bienvenida a mi portfolio!",
-        "Esta es una página muy sencilla.",
-        "Algunas páginas tienen botones y otras tienen naipes.",
-        "Si la página tiene botones, pulsa el que quieras para ir a otra página.",
-        "Si la página tiene naipes, los interactivos son los de color crema.",
-        "¡Disfruta, y si crees que algo se puede mejorar, no dudes en decírmelo!"
-      ],
-      "back": "← Volver"
-    }
+  "how_it_works": {
+    "title": "Cómo funciona",
+    "paragraphs": [
+      "Soy Zoe, ¡bienvenida a mi portfolio!",
+      "Esta es una página muy sencilla.",
+      "Algunas páginas tienen botones y otras tienen naipes.",
+      "Si la página tiene botones, pulsa el que quieras para ir a otra página.",
+      "Si la página tiene naipes, los interactivos son los de color crema.",
+      "¡Disfruta, y si crees que algo se puede mejorar, no dudes en decírmelo!"
+    ],
+    "back": "← Volver"
   }
-  
+}

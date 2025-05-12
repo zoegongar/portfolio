@@ -1,38 +1,32 @@
-/* Asegurarse de que html y body ocupen el 100% de la altura */
+html,
+body {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  background-image: url("./../assets/images/backgroung.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
-html, body {
-    height: 100%;
-    width: auto;
-    margin: 0;
-    padding: 0;
-    background-image: url("./../assets/images/backgroung.png");
-    background-size: cover; 
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
-  /* Configurar el body como contenedor flex en columna */
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-  
+body {
+  display: flex;
+  flex-direction: column;
+}
 
-  header {
-    background-color: #f0f0f0;
-  }
+header {
+  background-color: #f0f0f0;
+}
 
-  main {
-    flex: 0 95%;
-    align-items: center;
+main {
+  flex: 0 95%;
+  align-items: center;
+}
 
-  }
- 
-  footer {
-    font-family: 'Roboto', sans-serif;
-    color: #a480d6;
-    text-align: right;
-    margin: 0;
-    font-size: 16px;
-  }
-  
+footer {
+  font-family: "Roboto", sans-serif;
+  color: #a480d6;
+  text-align: right;
+  margin: 0;
+  font-size: 16px;
+}
