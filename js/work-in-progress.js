@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const lang = localStorage.getItem("idiomaSeleccionado") || "en";
 
-  const wipCards = ["projects", "tutorials", "contact", "cv"];
+  const wipCards = ["projects", "tutorials", "cv", "contact"];
   const workInProgressSection = document.getElementById("work-in-progress");
   const backBtn = document.getElementById("back-btn-progress");
 
