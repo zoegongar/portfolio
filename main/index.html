@@ -8,9 +8,6 @@
     <link rel="stylesheet" href="./../css/components.css" />
     <link rel="stylesheet" href="./../css/content-card.css" />
     <link rel="stylesheet" href="./../css/how-it-works.css" />
-    <script src="./../js/idioma-main.js"></script>
-    <script src="./../js/about-me.js"></script>
-    <script src="./../js/work-in-progress.js"></script>
   </head>
   <body>
     <header>
@@ -20,16 +17,11 @@
     <main class="main-content">
       <div class="upper-cards">
         <div class="playing-card interactive-card" id="aboutMe">
-          <h2 class="text-playing-cards">
-            About<br />
-            Me
-          </h2>
+          <h2 class="text-playing-cards">About<br />Me</h2>
         </div>
-
         <div class="playing-card interactive-card" id="contact">
           <h2 class="text-playing-cards">Contact</h2>
         </div>
-
         <div class="playing-card interactive-card" id="cv">
           <h2 class="text-playing-cards">CV</h2>
         </div>
@@ -51,6 +43,11 @@
         </div>
       </div>
     </main>
+
+    <!-- Contenido dinámico cargado por JS (secciones externas como aboutMe, contact...) -->
+    <section id="dynamic-content" class="content-section card hidden"></section>
+
+    <!-- Sección Work in Progress y about me -->
     <section id="aboutMeContent" class="content-section card hidden">
       <h2 class="card-title">About Me</h2>
       <p class="card-text" id="aboutMeText"></p>
@@ -68,5 +65,11 @@
     </section>
 
     <footer>Designed & developed by ZoeGonGar</footer>
+
+    <!-- Scripts -->
+    <script src="./../js/idioma-main.js"></script>
+    <script src="./../js/about-me.js"></script>
+    <script src="./../js/work-in-progress.js"></script>
+    <script src="./../js/components.js"></script>
   </body>
 </html>
