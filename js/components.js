@@ -55,6 +55,23 @@ export function clearCardContent() {
   });
 }
 
+export function setupGlobalNavigation(originalMainHTML) {
+  const mainContent = document.querySelector('.main-content');
+
+  document.addEventListener('click', (event) => {
+    const target = event.target;
+
+    if (event.target.id === 'backToMain') {
+      window.location.href = './index.html'; // ajusta si estás en otra carpeta
+    }
+    
+
+    if (target.id === 'exit') {
+      window.location.href = '../index.html'; // Ajusta según ubicación
+    }
+  });
+}
+
 
 
 // Exportar la función init() para que pueda ser llamada en otros archivos

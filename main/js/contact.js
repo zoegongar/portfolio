@@ -1,19 +1,19 @@
 export function renderContactSection() {
     const mainContent = document.querySelector('.main-content'); // Ajusta según tu HTML
     if (!mainContent) return;
-  console.log("estoy en contact");
     mainContent.innerHTML = `
       <div class="contact-deck">
        <div class="upper-cards">
-        <div class="playing-card interactive-card" >
-          <div id="aboutMe" class="text-playing-cards">LinkedIn</div>
-        </div>
-        <div class="playing-card interactive-card" >
+        <a href="https://www.linkedin.com/in/zoe-gonzalez-garcia/" target="_blank" class="playing-card interactive-card">
+            <h2 class="text-playing-cards" data-i18n="contact.linkedIn">LinkedIn</h2>
+        </a>
+
+        <a href="https://github.com/zoegongar" target="_blank" class="playing-card interactive-card" >
           <h2 id="contact" class="text-playing-cards">GitHub</h2>
-        </div>
-        <div class="playing-card interactive-card" >
+        </a>
+        <a href='mailto:zoegonzalezgarcia@gmail.com' class="playing-card interactive-card" >
           <h2 id="cv" class="text-playing-cards">E-mail</h2>
-        </div>
+        </a>
       </div>
       <div class="middle-cards">
         <div class="playing-card naipe-card" >
@@ -25,10 +25,10 @@ export function renderContactSection() {
       </div>
       <div class="bottom-cards">
         <div class="playing-card naipe-card">
-          <h2 id="tutorials" class="text-playing-cards">Back to main</h2>
+          <h2 id="backToMain" class="text-playing-cards">Back to main</h2>
         </div>
         <div class="playing-card naipe-card">
-          <h2 id="projects" class="text-playing-cards">Exit</h2>
+          <h2 id="exit" class="text-playing-cards">Exit</h2>
         </div>
       </div>
       </div>
