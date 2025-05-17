@@ -13,33 +13,32 @@
     <header>
       <nav></nav>
     </header>
-
     <main class="main-content">
       <div class="upper-cards">
-        <div class="playing-card interactive-card" id="aboutMe">
-          <h2 class="text-playing-cards">About<br />Me</h2>
+        <div class="playing-card interactive-card" >
+          <div id="aboutMe" class="text-playing-cards">About<br />Me</div>
         </div>
-        <div class="playing-card interactive-card" id="contact">
-          <h2 class="text-playing-cards">Contact</h2>
+        <div class="playing-card interactive-card" >
+          <h2 id="contact" class="text-playing-cards">Contact</h2>
         </div>
-        <div class="playing-card interactive-card" id="cv">
-          <h2 class="text-playing-cards">CV</h2>
+        <div class="playing-card interactive-card" >
+          <h2 id="cv" class="text-playing-cards">CV</h2>
         </div>
       </div>
       <div class="middle-cards">
-        <div class="playing-card naipe-card" id="playing-card-back">
-          <h2 class="text-playing-cards">Main</h2>
+        <div class="playing-card naipe-card" >
+          <h2 id="playing-card-back" class="text-playing-cards">Main</h2>
         </div>
-        <div class="playing-card location-indicator" id="settings">
-          <h2 class="text-playing-cards">Settings</h2>
+        <div class="playing-card location-indicator">
+          <h2 id="settings" class="text-playing-cards">Settings</h2>
         </div>
       </div>
       <div class="bottom-cards">
-        <div class="playing-card naipe-card" id="tutorials">
-          <h2 class="text-playing-cards">Tutorials</h2>
+        <div class="playing-card naipe-card">
+          <h2 id="tutorials" class="text-playing-cards">Tutorials</h2>
         </div>
-        <div class="playing-card naipe-card" id="projects">
-          <h2 class="text-playing-cards">Projects</h2>
+        <div class="playing-card naipe-card">
+          <h2 id="projects" class="text-playing-cards">Projects</h2>
         </div>
       </div>
     </main>
@@ -63,6 +62,8 @@
       <p class="card-text" id="wip-content"></p>
       <button id="back-btn-progress" class="button">← Back</button>
     </section>
+    <section id="card-section-container" class="content-section card hidden"></section>
+
 
     <footer>Designed & developed by ZoeGonGar</footer>
 
@@ -71,5 +72,7 @@
     <script src="./../js/about-me.js"></script>
     <script src="./../js/work-in-progress.js"></script>
     <script src="./../js/components.js"></script>
+    <script type="module" src="./js/contact.js"></script>
+
   </body>
 </html>

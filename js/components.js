@@ -25,14 +25,14 @@ function changeCardContent(cardId, newContent) {
 // components.js
 
 // Función para borrar el contenido de las cartas
-function clearCardContent() {
+/* function clearCardContent() {
   console.log('Borrando contenido de las cartas'); // Verifica que se llame
   const cards = document.querySelectorAll('.text-playing-cards');
   cards.forEach(card => {
     card.innerHTML = '';  // Borra el contenido de las cartas
   });
 }
-
+ */
 // Función para inicializar los event listeners
 function init() {
   console.log('Inicializando event listeners');
@@ -47,6 +47,18 @@ function init() {
     console.log('Botón "Contact Me" no encontrado');
   }
 }
+export function clearCardContent() {
+  const cards = document.querySelectorAll('.text-playing-cards');
+  console.log('cards encontrados:', cards.length);
+  cards.forEach(card => {
+    card.textContent = '';
+  });
+}
+
+
 
 // Exportar la función init() para que pueda ser llamada en otros archivos
 export { init };
+// components.js
+
+
