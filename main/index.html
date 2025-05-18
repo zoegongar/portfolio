@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main mi Portfolio</title>
+    <link rel="stylesheet" href="./../css/base.css" />
+    <link rel="stylesheet" href="./../css/components.css" />
+    <link rel="stylesheet" href="./../css/content-card.css" />
+    <link rel="stylesheet" href="./../css/how-it-works.css" />
+  </head>
+  <body>
+    <header>
+      <nav></nav>
+    </header>
+    <main class="main-content">
+      <div class="upper-cards">
+        <div class="playing-card interactive-card" >
+          <div id="aboutMe" class="text-playing-cards">About<br />Me</div>
+        </div>
+        <div class="playing-card interactive-card" >
+          <h2 id="contact" class="text-playing-cards">Contact</h2>
+        </div>
+        <div class="playing-card interactive-card" >
+          <h2 id="cv" class="text-playing-cards">CV</h2>
+        </div>
+      </div>
+      <div class="middle-cards">
+        <div class="playing-card naipe-card cardStack" >
+          <h2 id="playing-card-back" class="text-playing-cards">Main</h2>
+        </div>
+        <div class="playing-card location-indicator">
+          <h2 id="settings" class="text-playing-cards">Settings</h2>
+        </div>
+      </div>
+      <div class="bottom-cards">
+        <div class="playing-card naipe-card">
+          <h2 id="tutorials" class="text-playing-cards">Tutorials</h2>
+        </div>
+        <div class="playing-card naipe-card">
+          <h2 id="projects" class="text-playing-cards">Projects</h2>
+        </div>
+      </div>
+    </main>
+
+    <!-- Contenido dinámico cargado por JS (secciones externas como aboutMe, contact...) -->
+    <section id="dynamic-content" class="content-section card hidden"></section>
+
+    <!-- Sección Work in Progress y about me -->
+    <section id="aboutMeContent" class="content-section card hidden">
+      <h2 class="card-title">About Me</h2>
+      <p class="card-text" id="aboutMeText"></p>
+      <button id="back-button-about-me" class="button">← Back</button>
+    </section>
+    <section id="work-in-progress" class="content-section card hidden">
+      <h2 class="card-title" id="wip-title"></h2>
+      <img
+        src="./../assets/images/work-in-progress.png"
+        alt="construction sign"
+        class="work-in-progress-icon"
+      />
+      <p class="card-text" id="wip-content"></p>
+      <button id="back-btn-progress" class="button">← Back</button>
+    </section>
+    <section id="card-section-container" class="content-section card hidden"></section>
+
+
+    <footer>Designed & developed by ZoeGonGar</footer>
+
+    <!-- Scripts -->
+    <script src="./../js/idioma-main.js"></script>
+    <script src="./../js/about-me.js"></script>
+    <script src="./../js/work-in-progress.js"></script>
+    <script src="./../js/components.js"></script>
+    <script type="module" src="./js/contact.js"></script>
+    <script type="module" src="./js/main.js"></script>
+
+  </body>
+</html>
