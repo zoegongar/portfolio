@@ -2,7 +2,6 @@ import { clearCardContent } from './../../js/components.js';
 import { renderContactSection } from './contact.js';
 import { setupGlobalNavigation } from './../../js/components.js';
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const contactCard = document.getElementById('contact');
   if (contactCard) {
@@ -13,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.querySelector('.main-content');
@@ -31,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // En main.js
 const mainContent = document.querySelector('.main-content');
 export const originalMainClone = mainContent.cloneNode(true);
 

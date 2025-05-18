@@ -16,7 +16,7 @@ export function renderContactSection() {
         </a>
       </div>
       <div class="middle-cards">
-        <div class="playing-card naipe-card" >
+        <div class="playing-card naipe-card cardStack">
           <h2 id="playing-card-back" class="text-playing-cards">Contact</h2>
         </div>
         <div class="playing-card location-indicator">
@@ -32,6 +32,6 @@ export function renderContactSection() {
         </div>
       </div>
       </div>
-    `;
+    `
   }
   
